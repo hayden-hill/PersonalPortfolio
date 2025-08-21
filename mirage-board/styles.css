@@ -1,0 +1,115 @@
+:root {
+  --bg: #0f1317;
+  --panel: #11161c;
+  --panel-2: #1a2230;
+  --text: #e6edf3;
+  --muted: #9aa7b4;
+  --accent: #2dd4bf;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.app-header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #0a0f14;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover { filter: brightness(0.95); }
+
+.toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.toggle input { accent-color: var(--accent); cursor: pointer; }
+
+.app-main {
+  padding: 12px 16px 24px;
+}
+
+.board-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #0b0f14;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+svg#board { width: 100%; height: auto; display: block; }
+
+.node-label {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #0b0e13;
+  stroke-width: 3px;
+}
+
+.node .node-circle { fill: #f1f2f6; }
+.node.active .node-circle { fill: var(--accent); }
+.node:hover .node-circle { filter: brightness(0.95); }
+
+.shelf-title {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.token .token-text {
+  fill: #0b0f14;
+  font-size: 12px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.2);
+  stroke-width: 2px;
+}
+
+.app-footer {
+  padding: 12px 16px 24px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Dragging affordances */
+.dragging {
+  cursor: grabbing !important;
+}
+
